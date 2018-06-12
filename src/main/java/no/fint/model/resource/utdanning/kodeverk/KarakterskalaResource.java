@@ -1,9 +1,8 @@
-// Built from tag v2.7.0
+// Built from tag v3.0.0
 
 package no.fint.model.resource.utdanning.kodeverk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonSetter;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -12,10 +11,9 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
@@ -32,8 +30,18 @@ public class KarakterskalaResource extends Begrep implements FintMainObject, Fin
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
+
+    @JsonIgnore
+    public List<Link> getVigoreferanse() {
+        return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
+    }
     public void addVigoreferanse(Link link) {
         addLink("vigoreferanse", link);
+    }
+
+    @JsonIgnore
+    public List<Link> getVerdi() {
+        return getLinks().getOrDefault("verdi", Collections.emptyList()); 
     }
     public void addVerdi(Link link) {
         addLink("verdi", link);

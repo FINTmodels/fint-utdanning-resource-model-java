@@ -1,9 +1,8 @@
-// Built from tag v2.7.0
+// Built from tag v3.0.0
 
 package no.fint.model.resource.utdanning.elev;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonSetter;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -12,10 +11,9 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
@@ -32,14 +30,34 @@ public class KontaktlarergruppeResource extends Gruppe implements FintMainObject
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
+
+    @JsonIgnore
+    public List<Link> getBasisgruppe() {
+        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
+    }
     public void addBasisgruppe(Link link) {
         addLink("basisgruppe", link);
+    }
+
+    @JsonIgnore
+    public List<Link> getGrepreferanse() {
+        return getLinks().getOrDefault("grepreferanse", Collections.emptyList()); 
     }
     public void addGrepreferanse(Link link) {
         addLink("grepreferanse", link);
     }
+
+    @JsonIgnore
+    public List<Link> getVigoreferanse() {
+        return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
+    }
     public void addVigoreferanse(Link link) {
         addLink("vigoreferanse", link);
+    }
+
+    @JsonIgnore
+    public List<Link> getMedlemskap() {
+        return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 
     }
     public void addMedlemskap(Link link) {
         addLink("medlemskap", link);

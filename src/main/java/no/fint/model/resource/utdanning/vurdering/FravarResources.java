@@ -1,6 +1,6 @@
-// Built from tag v2.7.0
+// Built from tag v3.0.0
 
-package no.fint.model.resource.utdanning.kompleksedatatyper;
+package no.fint.model.resource.utdanning.vurdering;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 

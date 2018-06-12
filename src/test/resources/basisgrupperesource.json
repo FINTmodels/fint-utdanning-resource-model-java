@@ -3,13 +3,12 @@
   "navn": "ABC123",
   "periode": [
     {
-      "beskrivelse": null,
+      "beskrivelse": "BG 123",
       "slutt": "2019-04-17T13:47:49Z",
       "start": "2018-04-17T13:47:49Z"
     }
   ],
   "systemId": {
-    "gyldighetsperiode": null,
     "identifikatorverdi": "ABC123"
   },
   "_links": {
