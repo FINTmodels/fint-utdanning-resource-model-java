@@ -1,4 +1,4 @@
-// Built from tag v3.0.0-rc-1
+// Built from tag v3.1.0-rc-1
 
 package no.fint.model.resource.utdanning.elev;
 
@@ -38,18 +38,39 @@ public class UndervisningsforholdResource extends Utdanningsforhold implements F
         addLink("arbeidsforhold", link);
     }
     @JsonIgnore
+    public List<Link> getBasisgruppe() {
+        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
+    }
+    public void addBasisgruppe(Link link) {
+        addLink("basisgruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getKontaktlarergruppe() {
+        return getLinks().getOrDefault("kontaktlarergruppe", Collections.emptyList()); 
+    }
+    public void addKontaktlarergruppe(Link link) {
+        addLink("kontaktlarergruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getUndervisningsgruppe() {
+        return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
+    }
+    public void addUndervisningsgruppe(Link link) {
+        addLink("undervisningsgruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getEksamensgruppe() {
+        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
+    }
+    public void addEksamensgruppe(Link link) {
+        addLink("eksamensgruppe", link);
+    }
+    @JsonIgnore
     public List<Link> getTime() {
         return getLinks().getOrDefault("time", Collections.emptyList()); 
     }
     public void addTime(Link link) {
         addLink("time", link);
-    }
-    @JsonIgnore
-    public List<Link> getSkoleressurs() {
-        return getLinks().getOrDefault("skoleressurs", Collections.emptyList()); 
-    }
-    public void addSkoleressurs(Link link) {
-        addLink("skoleressurs", link);
     }
     @JsonIgnore
     public List<Link> getSkole() {
@@ -59,9 +80,18 @@ public class UndervisningsforholdResource extends Utdanningsforhold implements F
         addLink("skole", link);
     }
     @JsonIgnore
+    public List<Link> getSkoleressurs() {
+        return getLinks().getOrDefault("skoleressurs", Collections.emptyList()); 
+    }
+    public void addSkoleressurs(Link link) {
+        addLink("skoleressurs", link);
+    }
+    @Deprecated
+    @JsonIgnore
     public List<Link> getMedlemskap() {
         return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 
     }
+    @Deprecated
     public void addMedlemskap(Link link) {
         addLink("medlemskap", link);
     }

@@ -1,4 +1,4 @@
-// Built from tag v3.0.0-rc-1
+// Built from tag v3.1.0-rc-1
 
 package no.fint.model.resource.utdanning.utdanningsprogram;
 
@@ -69,17 +69,59 @@ public class SkoleResource extends EnhetResource implements FintMainObject, Fint
         addLink("vigoreferanse", link);
     }
     @JsonIgnore
+    public List<Link> getBasisgruppe() {
+        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
+    }
+    public void addBasisgruppe(Link link) {
+        addLink("basisgruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getElevforhold() {
+        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
+    }
+    public void addElevforhold(Link link) {
+        addLink("elevforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getKontaktlarergruppe() {
+        return getLinks().getOrDefault("kontaktlarergruppe", Collections.emptyList()); 
+    }
+    public void addKontaktlarergruppe(Link link) {
+        addLink("kontaktlarergruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getSkoleressurs() {
+        return getLinks().getOrDefault("skoleressurs", Collections.emptyList()); 
+    }
+    public void addSkoleressurs(Link link) {
+        addLink("skoleressurs", link);
+    }
+    @JsonIgnore
+    public List<Link> getUndervisningsforhold() {
+        return getLinks().getOrDefault("undervisningsforhold", Collections.emptyList()); 
+    }
+    public void addUndervisningsforhold(Link link) {
+        addLink("undervisningsforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getUndervisningsgruppe() {
+        return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
+    }
+    public void addUndervisningsgruppe(Link link) {
+        addLink("undervisningsgruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getEksamensgruppe() {
+        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
+    }
+    public void addEksamensgruppe(Link link) {
+        addLink("eksamensgruppe", link);
+    }
+    @JsonIgnore
     public List<Link> getUtdanningsprogram() {
         return getLinks().getOrDefault("utdanningsprogram", Collections.emptyList()); 
     }
     public void addUtdanningsprogram(Link link) {
         addLink("utdanningsprogram", link);
-    }
-    @JsonIgnore
-    public List<Link> getUtdanningsforhold() {
-        return getLinks().getOrDefault("utdanningsforhold", Collections.emptyList()); 
-    }
-    public void addUtdanningsforhold(Link link) {
-        addLink("utdanningsforhold", link);
     }
 }

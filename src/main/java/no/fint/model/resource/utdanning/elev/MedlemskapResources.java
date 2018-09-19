@@ -1,4 +1,4 @@
-// Built from tag v3.0.0-rc-1
+// Built from tag v3.1.0-rc-1
 
 package no.fint.model.resource.utdanning.elev;
 
@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 import no.fint.model.resource.AbstractCollectionResources;
 
 @NoArgsConstructor
+@Deprecated
 public class MedlemskapResources extends AbstractCollectionResources<MedlemskapResource> {
 
     public MedlemskapResources(Collection<MedlemskapResource> input) {

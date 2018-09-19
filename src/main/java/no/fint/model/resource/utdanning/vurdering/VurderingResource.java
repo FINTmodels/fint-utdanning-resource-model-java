@@ -1,4 +1,4 @@
-// Built from tag v3.0.0-rc-1
+// Built from tag v3.1.0-rc-1
 
 package no.fint.model.resource.utdanning.vurdering;
 
@@ -27,6 +27,8 @@ import no.fint.model.felles.kompleksedatatyper.Identifikator;
 public class VurderingResource implements FintMainObject, FintLinks {
     // Attributes
     @NonNull
+    private Boolean endelig;
+    @NonNull
     private String kommentar;
     @NonNull
     private Identifikator systemId;
@@ -35,6 +37,27 @@ public class VurderingResource implements FintMainObject, FintLinks {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
+    @JsonIgnore
+    public List<Link> getElevforhold() {
+        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
+    }
+    public void addElevforhold(Link link) {
+        addLink("elevforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getUndervisningsgruppe() {
+        return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
+    }
+    public void addUndervisningsgruppe(Link link) {
+        addLink("undervisningsgruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getEksamensgruppe() {
+        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
+    }
+    public void addEksamensgruppe(Link link) {
+        addLink("eksamensgruppe", link);
+    }
     @JsonIgnore
     public List<Link> getKarakter() {
         return getLinks().getOrDefault("karakter", Collections.emptyList()); 

@@ -1,4 +1,4 @@
-// Built from tag v3.0.0-rc-1
+// Built from tag v3.1.0-rc-1
 
 package no.fint.model.resource.utdanning.elev;
 
@@ -31,6 +31,13 @@ public class ElevforholdResource extends Utdanningsforhold implements FintMainOb
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
+    public List<Link> getBasisgruppe() {
+        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
+    }
+    public void addBasisgruppe(Link link) {
+        addLink("basisgruppe", link);
+    }
+    @JsonIgnore
     public List<Link> getElev() {
         return getLinks().getOrDefault("elev", Collections.emptyList()); 
     }
@@ -52,9 +59,46 @@ public class ElevforholdResource extends Utdanningsforhold implements FintMainOb
         addLink("skole", link);
     }
     @JsonIgnore
+    public List<Link> getEksamensgruppe() {
+        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
+    }
+    public void addEksamensgruppe(Link link) {
+        addLink("eksamensgruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getKontaktlarergruppe() {
+        return getLinks().getOrDefault("kontaktlarergruppe", Collections.emptyList()); 
+    }
+    public void addKontaktlarergruppe(Link link) {
+        addLink("kontaktlarergruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getUndervisningsgruppe() {
+        return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
+    }
+    public void addUndervisningsgruppe(Link link) {
+        addLink("undervisningsgruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getVurdering() {
+        return getLinks().getOrDefault("vurdering", Collections.emptyList()); 
+    }
+    public void addVurdering(Link link) {
+        addLink("vurdering", link);
+    }
+    @JsonIgnore
+    public List<Link> getFravar() {
+        return getLinks().getOrDefault("fravar", Collections.emptyList()); 
+    }
+    public void addFravar(Link link) {
+        addLink("fravar", link);
+    }
+    @Deprecated
+    @JsonIgnore
     public List<Link> getMedlemskap() {
         return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 
     }
+    @Deprecated
     public void addMedlemskap(Link link) {
         addLink("medlemskap", link);
     }

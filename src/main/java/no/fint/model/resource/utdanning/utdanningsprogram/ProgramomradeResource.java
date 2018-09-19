@@ -1,4 +1,4 @@
-// Built from tag v3.0.0-rc-1
+// Built from tag v3.1.0-rc-1
 
 package no.fint.model.resource.utdanning.utdanningsprogram;
 
@@ -65,10 +65,12 @@ public class ProgramomradeResource extends Gruppe implements FintMainObject, Fin
     public void addVigoreferanse(Link link) {
         addLink("vigoreferanse", link);
     }
+    @Deprecated
     @JsonIgnore
     public List<Link> getMedlemskap() {
         return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 
     }
+    @Deprecated
     public void addMedlemskap(Link link) {
         addLink("medlemskap", link);
     }

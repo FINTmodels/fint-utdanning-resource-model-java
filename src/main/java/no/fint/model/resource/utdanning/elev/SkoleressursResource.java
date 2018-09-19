@@ -1,4 +1,4 @@
-// Built from tag v3.0.0-rc-1
+// Built from tag v3.1.0-rc-1
 
 package no.fint.model.resource.utdanning.elev;
 
@@ -47,5 +47,12 @@ public class SkoleressursResource implements FintMainObject, FintLinks {
     }
     public void addUndervisningsforhold(Link link) {
         addLink("undervisningsforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getSkole() {
+        return getLinks().getOrDefault("skole", Collections.emptyList()); 
+    }
+    public void addSkole(Link link) {
+        addLink("skole", link);
     }
 }
