@@ -1,4 +1,4 @@
-// Built from tag v3.0.0
+// Built from tag v3.0.0-rc-1
 
 package no.fint.model.resource.utdanning.elev;
 
@@ -38,7 +38,6 @@ public class ElevResource implements FintMainObject, FintLinks {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-
     @JsonIgnore
     public List<Link> getPerson() {
         return getLinks().getOrDefault("person", Collections.emptyList()); 
@@ -46,7 +45,6 @@ public class ElevResource implements FintMainObject, FintLinks {
     public void addPerson(Link link) {
         addLink("person", link);
     }
-
     @JsonIgnore
     public List<Link> getElevforhold() {
         return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 

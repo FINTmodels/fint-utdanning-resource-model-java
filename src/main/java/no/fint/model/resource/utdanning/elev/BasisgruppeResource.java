@@ -1,4 +1,4 @@
-// Built from tag v3.0.0
+// Built from tag v3.0.0-rc-1
 
 package no.fint.model.resource.utdanning.elev;
 
@@ -30,7 +30,6 @@ public class BasisgruppeResource extends Gruppe implements FintMainObject, FintL
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-
     @JsonIgnore
     public List<Link> getTrinn() {
         return getLinks().getOrDefault("trinn", Collections.emptyList()); 
@@ -38,7 +37,6 @@ public class BasisgruppeResource extends Gruppe implements FintMainObject, FintL
     public void addTrinn(Link link) {
         addLink("trinn", link);
     }
-
     @JsonIgnore
     public List<Link> getKontaktlarergruppe() {
         return getLinks().getOrDefault("kontaktlarergruppe", Collections.emptyList()); 
@@ -46,7 +44,6 @@ public class BasisgruppeResource extends Gruppe implements FintMainObject, FintL
     public void addKontaktlarergruppe(Link link) {
         addLink("kontaktlarergruppe", link);
     }
-
     @JsonIgnore
     public List<Link> getGrepreferanse() {
         return getLinks().getOrDefault("grepreferanse", Collections.emptyList()); 
@@ -54,7 +51,6 @@ public class BasisgruppeResource extends Gruppe implements FintMainObject, FintL
     public void addGrepreferanse(Link link) {
         addLink("grepreferanse", link);
     }
-
     @JsonIgnore
     public List<Link> getVigoreferanse() {
         return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
@@ -62,7 +58,6 @@ public class BasisgruppeResource extends Gruppe implements FintMainObject, FintL
     public void addVigoreferanse(Link link) {
         addLink("vigoreferanse", link);
     }
-
     @JsonIgnore
     public List<Link> getMedlemskap() {
         return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 

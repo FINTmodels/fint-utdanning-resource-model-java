@@ -1,4 +1,4 @@
-// Built from tag v3.0.0
+// Built from tag v3.0.0-rc-1
 
 package no.fint.model.resource.utdanning.utdanningsprogram;
 
@@ -40,7 +40,6 @@ public class SkoleResource extends EnhetResource implements FintMainObject, Fint
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-
     @JsonIgnore
     public List<Link> getOrganisasjon() {
         return getLinks().getOrDefault("organisasjon", Collections.emptyList()); 
@@ -48,7 +47,6 @@ public class SkoleResource extends EnhetResource implements FintMainObject, Fint
     public void addOrganisasjon(Link link) {
         addLink("organisasjon", link);
     }
-
     @JsonIgnore
     public List<Link> getFag() {
         return getLinks().getOrDefault("fag", Collections.emptyList()); 
@@ -56,7 +54,6 @@ public class SkoleResource extends EnhetResource implements FintMainObject, Fint
     public void addFag(Link link) {
         addLink("fag", link);
     }
-
     @JsonIgnore
     public List<Link> getSkoleeierType() {
         return getLinks().getOrDefault("skoleeierType", Collections.emptyList()); 
@@ -64,7 +61,6 @@ public class SkoleResource extends EnhetResource implements FintMainObject, Fint
     public void addSkoleeierType(Link link) {
         addLink("skoleeierType", link);
     }
-
     @JsonIgnore
     public List<Link> getVigoreferanse() {
         return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
@@ -72,7 +68,6 @@ public class SkoleResource extends EnhetResource implements FintMainObject, Fint
     public void addVigoreferanse(Link link) {
         addLink("vigoreferanse", link);
     }
-
     @JsonIgnore
     public List<Link> getUtdanningsprogram() {
         return getLinks().getOrDefault("utdanningsprogram", Collections.emptyList()); 
@@ -80,7 +75,6 @@ public class SkoleResource extends EnhetResource implements FintMainObject, Fint
     public void addUtdanningsprogram(Link link) {
         addLink("utdanningsprogram", link);
     }
-
     @JsonIgnore
     public List<Link> getUtdanningsforhold() {
         return getLinks().getOrDefault("utdanningsforhold", Collections.emptyList()); 

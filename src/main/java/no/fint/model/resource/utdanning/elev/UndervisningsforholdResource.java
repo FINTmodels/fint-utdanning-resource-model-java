@@ -1,4 +1,4 @@
-// Built from tag v3.0.0
+// Built from tag v3.0.0-rc-1
 
 package no.fint.model.resource.utdanning.elev;
 
@@ -30,7 +30,6 @@ public class UndervisningsforholdResource extends Utdanningsforhold implements F
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-
     @JsonIgnore
     public List<Link> getArbeidsforhold() {
         return getLinks().getOrDefault("arbeidsforhold", Collections.emptyList()); 
@@ -38,7 +37,6 @@ public class UndervisningsforholdResource extends Utdanningsforhold implements F
     public void addArbeidsforhold(Link link) {
         addLink("arbeidsforhold", link);
     }
-
     @JsonIgnore
     public List<Link> getTime() {
         return getLinks().getOrDefault("time", Collections.emptyList()); 
@@ -46,7 +44,6 @@ public class UndervisningsforholdResource extends Utdanningsforhold implements F
     public void addTime(Link link) {
         addLink("time", link);
     }
-
     @JsonIgnore
     public List<Link> getSkoleressurs() {
         return getLinks().getOrDefault("skoleressurs", Collections.emptyList()); 
@@ -54,7 +51,6 @@ public class UndervisningsforholdResource extends Utdanningsforhold implements F
     public void addSkoleressurs(Link link) {
         addLink("skoleressurs", link);
     }
-
     @JsonIgnore
     public List<Link> getSkole() {
         return getLinks().getOrDefault("skole", Collections.emptyList()); 
@@ -62,7 +58,6 @@ public class UndervisningsforholdResource extends Utdanningsforhold implements F
     public void addSkole(Link link) {
         addLink("skole", link);
     }
-
     @JsonIgnore
     public List<Link> getMedlemskap() {
         return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 

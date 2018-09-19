@@ -1,4 +1,4 @@
-// Built from tag v3.0.0
+// Built from tag v3.0.0-rc-1
 
 package no.fint.model.resource.utdanning.vurdering;
 
@@ -30,7 +30,6 @@ public class EksamensgruppeResource extends Gruppe implements FintMainObject, Fi
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-
     @JsonIgnore
     public List<Link> getFag() {
         return getLinks().getOrDefault("fag", Collections.emptyList()); 
@@ -38,7 +37,6 @@ public class EksamensgruppeResource extends Gruppe implements FintMainObject, Fi
     public void addFag(Link link) {
         addLink("fag", link);
     }
-
     @JsonIgnore
     public List<Link> getGrepreferanse() {
         return getLinks().getOrDefault("grepreferanse", Collections.emptyList()); 
@@ -46,7 +44,6 @@ public class EksamensgruppeResource extends Gruppe implements FintMainObject, Fi
     public void addGrepreferanse(Link link) {
         addLink("grepreferanse", link);
     }
-
     @JsonIgnore
     public List<Link> getVigoreferanse() {
         return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
@@ -54,7 +51,6 @@ public class EksamensgruppeResource extends Gruppe implements FintMainObject, Fi
     public void addVigoreferanse(Link link) {
         addLink("vigoreferanse", link);
     }
-
     @JsonIgnore
     public List<Link> getMedlemskap() {
         return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 

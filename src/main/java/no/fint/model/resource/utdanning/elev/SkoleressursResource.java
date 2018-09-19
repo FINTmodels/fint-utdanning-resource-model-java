@@ -1,4 +1,4 @@
-// Built from tag v3.0.0
+// Built from tag v3.0.0-rc-1
 
 package no.fint.model.resource.utdanning.elev;
 
@@ -34,7 +34,6 @@ public class SkoleressursResource implements FintMainObject, FintLinks {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-
     @JsonIgnore
     public List<Link> getPersonalressurs() {
         return getLinks().getOrDefault("personalressurs", Collections.emptyList()); 
@@ -42,7 +41,6 @@ public class SkoleressursResource implements FintMainObject, FintLinks {
     public void addPersonalressurs(Link link) {
         addLink("personalressurs", link);
     }
-
     @JsonIgnore
     public List<Link> getUndervisningsforhold() {
         return getLinks().getOrDefault("undervisningsforhold", Collections.emptyList()); 

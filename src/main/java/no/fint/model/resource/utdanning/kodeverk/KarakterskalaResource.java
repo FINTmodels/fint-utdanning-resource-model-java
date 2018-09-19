@@ -1,4 +1,4 @@
-// Built from tag v3.0.0
+// Built from tag v3.0.0-rc-1
 
 package no.fint.model.resource.utdanning.kodeverk;
 
@@ -30,7 +30,6 @@ public class KarakterskalaResource extends Begrep implements FintMainObject, Fin
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-
     @JsonIgnore
     public List<Link> getVigoreferanse() {
         return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
@@ -38,7 +37,6 @@ public class KarakterskalaResource extends Begrep implements FintMainObject, Fin
     public void addVigoreferanse(Link link) {
         addLink("vigoreferanse", link);
     }
-
     @JsonIgnore
     public List<Link> getVerdi() {
         return getLinks().getOrDefault("verdi", Collections.emptyList()); 

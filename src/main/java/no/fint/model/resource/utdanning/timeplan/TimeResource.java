@@ -1,4 +1,4 @@
-// Built from tag v3.0.0
+// Built from tag v3.0.0-rc-1
 
 package no.fint.model.resource.utdanning.timeplan;
 
@@ -39,7 +39,6 @@ public class TimeResource implements FintMainObject, FintLinks {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-
     @JsonIgnore
     public List<Link> getUndervisningsgruppe() {
         return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
@@ -47,7 +46,6 @@ public class TimeResource implements FintMainObject, FintLinks {
     public void addUndervisningsgruppe(Link link) {
         addLink("undervisningsgruppe", link);
     }
-
     @JsonIgnore
     public List<Link> getUndervisningsforhold() {
         return getLinks().getOrDefault("undervisningsforhold", Collections.emptyList()); 
@@ -55,7 +53,6 @@ public class TimeResource implements FintMainObject, FintLinks {
     public void addUndervisningsforhold(Link link) {
         addLink("undervisningsforhold", link);
     }
-
     @JsonIgnore
     public List<Link> getRom() {
         return getLinks().getOrDefault("rom", Collections.emptyList()); 

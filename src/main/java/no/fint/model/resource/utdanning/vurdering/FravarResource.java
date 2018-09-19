@@ -1,4 +1,4 @@
-// Built from tag v3.0.0
+// Built from tag v3.0.0-rc-1
 
 package no.fint.model.resource.utdanning.vurdering;
 
@@ -42,7 +42,6 @@ public class FravarResource implements FintMainObject, FintLinks {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-
     @JsonIgnore
     public List<Link> getFravarstype() {
         return getLinks().getOrDefault("fravarstype", Collections.emptyList()); 

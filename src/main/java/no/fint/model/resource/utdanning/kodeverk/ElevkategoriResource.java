@@ -1,6 +1,6 @@
 // Built from tag v3.0.0-rc-1
 
-package no.fint.model.resource.utdanning.vurdering;
+package no.fint.model.resource.utdanning.kodeverk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -24,17 +24,9 @@ import no.fint.model.felles.basisklasser.Begrep;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper=true)
 @ToString(callSuper=true)
-public class KarakterverdiResource extends Begrep implements FintMainObject, FintLinks {
+public class ElevkategoriResource extends Begrep implements FintMainObject, FintLinks {
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
-        
-    @JsonIgnore
-    public List<Link> getSkala() {
-        return getLinks().getOrDefault("skala", Collections.emptyList()); 
-    }
-    public void addSkala(Link link) {
-        addLink("skala", link);
-    }
 }

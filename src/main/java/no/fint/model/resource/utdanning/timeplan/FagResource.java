@@ -1,4 +1,4 @@
-// Built from tag v3.0.0
+// Built from tag v3.0.0-rc-1
 
 package no.fint.model.resource.utdanning.timeplan;
 
@@ -30,7 +30,6 @@ public class FagResource extends Gruppe implements FintMainObject, FintLinks {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-
     @JsonIgnore
     public List<Link> getProgramomrade() {
         return getLinks().getOrDefault("programomrade", Collections.emptyList()); 
@@ -38,7 +37,6 @@ public class FagResource extends Gruppe implements FintMainObject, FintLinks {
     public void addProgramomrade(Link link) {
         addLink("programomrade", link);
     }
-
     @JsonIgnore
     public List<Link> getSkole() {
         return getLinks().getOrDefault("skole", Collections.emptyList()); 
@@ -46,7 +44,6 @@ public class FagResource extends Gruppe implements FintMainObject, FintLinks {
     public void addSkole(Link link) {
         addLink("skole", link);
     }
-
     @JsonIgnore
     public List<Link> getUndervisningsgruppe() {
         return getLinks().getOrDefault("undervisningsgruppe", Collections.emptyList()); 
@@ -54,7 +51,6 @@ public class FagResource extends Gruppe implements FintMainObject, FintLinks {
     public void addUndervisningsgruppe(Link link) {
         addLink("undervisningsgruppe", link);
     }
-
     @JsonIgnore
     public List<Link> getEksamensgruppe() {
         return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
@@ -62,7 +58,6 @@ public class FagResource extends Gruppe implements FintMainObject, FintLinks {
     public void addEksamensgruppe(Link link) {
         addLink("eksamensgruppe", link);
     }
-
     @JsonIgnore
     public List<Link> getGrepreferanse() {
         return getLinks().getOrDefault("grepreferanse", Collections.emptyList()); 
@@ -70,7 +65,6 @@ public class FagResource extends Gruppe implements FintMainObject, FintLinks {
     public void addGrepreferanse(Link link) {
         addLink("grepreferanse", link);
     }
-
     @JsonIgnore
     public List<Link> getVigoreferanse() {
         return getLinks().getOrDefault("vigoreferanse", Collections.emptyList()); 
@@ -78,7 +72,6 @@ public class FagResource extends Gruppe implements FintMainObject, FintLinks {
     public void addVigoreferanse(Link link) {
         addLink("vigoreferanse", link);
     }
-
     @JsonIgnore
     public List<Link> getMedlemskap() {
         return getLinks().getOrDefault("medlemskap", Collections.emptyList()); 

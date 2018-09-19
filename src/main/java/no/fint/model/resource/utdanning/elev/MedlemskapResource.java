@@ -1,4 +1,4 @@
-// Built from tag v3.0.0
+// Built from tag v3.0.0-rc-1
 
 package no.fint.model.resource.utdanning.elev;
 
@@ -33,7 +33,6 @@ public class MedlemskapResource implements FintMainObject, FintLinks {
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
-
     @JsonIgnore
     public List<Link> getMedlem() {
         return getLinks().getOrDefault("medlem", Collections.emptyList()); 
@@ -41,7 +40,6 @@ public class MedlemskapResource implements FintMainObject, FintLinks {
     public void addMedlem(Link link) {
         addLink("medlem", link);
     }
-
     @JsonIgnore
     public List<Link> getFortlopendeVurdering() {
         return getLinks().getOrDefault("fortlopendeVurdering", Collections.emptyList()); 
@@ -49,7 +47,6 @@ public class MedlemskapResource implements FintMainObject, FintLinks {
     public void addFortlopendeVurdering(Link link) {
         addLink("fortlopendeVurdering", link);
     }
-
     @JsonIgnore
     public List<Link> getGruppe() {
         return getLinks().getOrDefault("gruppe", Collections.emptyList()); 
@@ -57,7 +54,6 @@ public class MedlemskapResource implements FintMainObject, FintLinks {
     public void addGruppe(Link link) {
         addLink("gruppe", link);
     }
-
     @JsonIgnore
     public List<Link> getEndeligVurdering() {
         return getLinks().getOrDefault("endeligVurdering", Collections.emptyList()); 
@@ -65,7 +61,6 @@ public class MedlemskapResource implements FintMainObject, FintLinks {
     public void addEndeligVurdering(Link link) {
         addLink("endeligVurdering", link);
     }
-
     @JsonIgnore
     public List<Link> getFravar() {
         return getLinks().getOrDefault("fravar", Collections.emptyList()); 
