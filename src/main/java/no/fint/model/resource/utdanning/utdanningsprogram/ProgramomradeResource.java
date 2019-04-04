@@ -1,4 +1,4 @@
-// Built from tag v3.1.0
+// Built from tag v3.2.0-rc-1
 
 package no.fint.model.resource.utdanning.utdanningsprogram;
 
@@ -36,6 +36,13 @@ public class ProgramomradeResource extends Gruppe implements FintMainObject, Fin
     }
     public void addUtdanningsprogram(Link link) {
         addLink("utdanningsprogram", link);
+    }
+    @JsonIgnore
+    public List<Link> getElevforhold() {
+        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
+    }
+    public void addElevforhold(Link link) {
+        addLink("elevforhold", link);
     }
     @JsonIgnore
     public List<Link> getFag() {

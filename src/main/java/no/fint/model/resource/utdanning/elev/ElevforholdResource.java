@@ -1,4 +1,4 @@
-// Built from tag v3.1.0
+// Built from tag v3.2.0-rc-1
 
 package no.fint.model.resource.utdanning.elev;
 
@@ -71,6 +71,13 @@ public class ElevforholdResource extends Utdanningsforhold implements FintMainOb
     }
     public void addKontaktlarergruppe(Link link) {
         addLink("kontaktlarergruppe", link);
+    }
+    @JsonIgnore
+    public List<Link> getProgramomrade() {
+        return getLinks().getOrDefault("programomrade", Collections.emptyList()); 
+    }
+    public void addProgramomrade(Link link) {
+        addLink("programomrade", link);
     }
     @JsonIgnore
     public List<Link> getUndervisningsgruppe() {
