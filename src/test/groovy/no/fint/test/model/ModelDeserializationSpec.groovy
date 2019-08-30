@@ -3,6 +3,7 @@ package no.fint.test.model
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException
+import no.fint.model.resource.felles.PersonResource
 import no.fint.model.resource.utdanning.elev.BasisgruppeResource
 import no.fint.model.utdanning.elev.Basisgruppe
 import spock.lang.Specification
@@ -84,4 +85,15 @@ class ModelDeserializationSpec extends Specification {
         result.links.size() == 1
     }
 
+    def 'Empty Person JSON'() {
+        given:
+        def input = getClass().getResourceAsStream('/person.json')
+
+        when:
+        def result = objectMapper.readValue(input, PersonResource.class)
+        println(result)
+
+        then:
+        result
+    }
 }
