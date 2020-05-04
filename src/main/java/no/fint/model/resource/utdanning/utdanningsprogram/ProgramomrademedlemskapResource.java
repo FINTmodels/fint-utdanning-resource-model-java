@@ -1,6 +1,6 @@
 // Built from tag v3.5.0-rc-1
 
-package no.fint.model.resource.utdanning.elev;
+package no.fint.model.resource.utdanning.utdanningsprogram;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -18,38 +18,30 @@ import java.util.Map;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
-import no.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
+import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
-public class ElevResource implements FintMainObject, FintLinks {
-    // Attributes
-    private Identifikator brukernavn;
-    private Identifikator elevnummer;
-    private Identifikator feidenavn;
-    private Kontaktinformasjon kontaktinformasjon;
-    @NonNull
-    private Identifikator systemId;
+@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper=true)
+public class ProgramomrademedlemskapResource extends Gruppemedlemskap implements FintMainObject, FintLinks {
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getPerson() {
-        return getLinks().getOrDefault("person", Collections.emptyList()); 
-    }
-    public void addPerson(Link link) {
-        addLink("person", link);
-    }
-    @JsonIgnore
     public List<Link> getElevforhold() {
         return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
     }
     public void addElevforhold(Link link) {
         addLink("elevforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getProgramomrade() {
+        return getLinks().getOrDefault("programomrade", Collections.emptyList()); 
+    }
+    public void addProgramomrade(Link link) {
+        addLink("programomrade", link);
     }
 }

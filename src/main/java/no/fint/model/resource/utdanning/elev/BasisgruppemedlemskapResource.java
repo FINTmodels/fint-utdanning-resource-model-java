@@ -18,32 +18,24 @@ import java.util.Map;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
-import no.fint.model.felles.kompleksedatatyper.Identifikator;
-import no.fint.model.felles.kompleksedatatyper.Kontaktinformasjon;
+import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
-public class ElevResource implements FintMainObject, FintLinks {
-    // Attributes
-    private Identifikator brukernavn;
-    private Identifikator elevnummer;
-    private Identifikator feidenavn;
-    private Kontaktinformasjon kontaktinformasjon;
-    @NonNull
-    private Identifikator systemId;
+@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper=true)
+public class BasisgruppemedlemskapResource extends Gruppemedlemskap implements FintMainObject, FintLinks {
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getPerson() {
-        return getLinks().getOrDefault("person", Collections.emptyList()); 
+    public List<Link> getBasisgruppe() {
+        return getLinks().getOrDefault("basisgruppe", Collections.emptyList()); 
     }
-    public void addPerson(Link link) {
-        addLink("person", link);
+    public void addBasisgruppe(Link link) {
+        addLink("basisgruppe", link);
     }
     @JsonIgnore
     public List<Link> getElevforhold() {

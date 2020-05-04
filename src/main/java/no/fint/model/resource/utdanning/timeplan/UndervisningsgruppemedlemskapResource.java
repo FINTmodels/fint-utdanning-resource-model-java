@@ -1,6 +1,6 @@
 // Built from tag v3.5.0-rc-1
 
-package no.fint.model.resource.utdanning.vurdering;
+package no.fint.model.resource.utdanning.timeplan;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -18,20 +18,13 @@ import java.util.Map;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
-import no.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.fint.model.utdanning.basisklasser.Gruppemedlemskap;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
-public class VurderingResource implements FintMainObject, FintLinks {
-    // Attributes
-    @NonNull
-    private Boolean endelig;
-    @NonNull
-    private String kommentar;
-    @NonNull
-    private Identifikator systemId;
+@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper=true)
+public class UndervisningsgruppemedlemskapResource extends Gruppemedlemskap implements FintMainObject, FintLinks {
 
     // Relations
     @Getter
@@ -50,19 +43,5 @@ public class VurderingResource implements FintMainObject, FintLinks {
     }
     public void addUndervisningsgruppe(Link link) {
         addLink("undervisningsgruppe", link);
-    }
-    @JsonIgnore
-    public List<Link> getEksamensgruppe() {
-        return getLinks().getOrDefault("eksamensgruppe", Collections.emptyList()); 
-    }
-    public void addEksamensgruppe(Link link) {
-        addLink("eksamensgruppe", link);
-    }
-    @JsonIgnore
-    public List<Link> getKarakter() {
-        return getLinks().getOrDefault("karakter", Collections.emptyList()); 
-    }
-    public void addKarakter(Link link) {
-        addLink("karakter", link);
     }
 }

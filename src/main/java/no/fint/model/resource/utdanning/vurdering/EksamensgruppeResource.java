@@ -1,4 +1,4 @@
-// Built from tag v3.4.0
+// Built from tag v3.5.0-rc-1
 
 package no.fint.model.resource.utdanning.vurdering;
 
@@ -31,6 +31,13 @@ public class EksamensgruppeResource extends Gruppe implements FintMainObject, Fi
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
+    public List<Link> getElevforhold() {
+        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
+    }
+    public void addElevforhold(Link link) {
+        addLink("elevforhold", link);
+    }
+    @JsonIgnore
     public List<Link> getFag() {
         return getLinks().getOrDefault("fag", Collections.emptyList()); 
     }
@@ -45,11 +52,18 @@ public class EksamensgruppeResource extends Gruppe implements FintMainObject, Fi
         addLink("skole", link);
     }
     @JsonIgnore
-    public List<Link> getElevforhold() {
-        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
+    public List<Link> getTermin() {
+        return getLinks().getOrDefault("termin", Collections.emptyList()); 
     }
-    public void addElevforhold(Link link) {
-        addLink("elevforhold", link);
+    public void addTermin(Link link) {
+        addLink("termin", link);
+    }
+    @JsonIgnore
+    public List<Link> getSkolear() {
+        return getLinks().getOrDefault("skolear", Collections.emptyList()); 
+    }
+    public void addSkolear(Link link) {
+        addLink("skolear", link);
     }
     @JsonIgnore
     public List<Link> getUndervisningsforhold() {
@@ -57,6 +71,13 @@ public class EksamensgruppeResource extends Gruppe implements FintMainObject, Fi
     }
     public void addUndervisningsforhold(Link link) {
         addLink("undervisningsforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getGruppemedlemskap() {
+        return getLinks().getOrDefault("gruppemedlemskap", Collections.emptyList()); 
+    }
+    public void addGruppemedlemskap(Link link) {
+        addLink("gruppemedlemskap", link);
     }
     @JsonIgnore
     public List<Link> getGrepreferanse() {

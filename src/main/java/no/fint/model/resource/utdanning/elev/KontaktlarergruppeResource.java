@@ -1,4 +1,4 @@
-// Built from tag v3.4.0
+// Built from tag v3.5.0-rc-1
 
 package no.fint.model.resource.utdanning.elev;
 
@@ -38,13 +38,6 @@ public class KontaktlarergruppeResource extends Gruppe implements FintMainObject
         addLink("basisgruppe", link);
     }
     @JsonIgnore
-    public List<Link> getSkole() {
-        return getLinks().getOrDefault("skole", Collections.emptyList()); 
-    }
-    public void addSkole(Link link) {
-        addLink("skole", link);
-    }
-    @JsonIgnore
     public List<Link> getElevforhold() {
         return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
     }
@@ -52,11 +45,39 @@ public class KontaktlarergruppeResource extends Gruppe implements FintMainObject
         addLink("elevforhold", link);
     }
     @JsonIgnore
+    public List<Link> getTermin() {
+        return getLinks().getOrDefault("termin", Collections.emptyList()); 
+    }
+    public void addTermin(Link link) {
+        addLink("termin", link);
+    }
+    @JsonIgnore
+    public List<Link> getSkole() {
+        return getLinks().getOrDefault("skole", Collections.emptyList()); 
+    }
+    public void addSkole(Link link) {
+        addLink("skole", link);
+    }
+    @JsonIgnore
+    public List<Link> getSkolear() {
+        return getLinks().getOrDefault("skolear", Collections.emptyList()); 
+    }
+    public void addSkolear(Link link) {
+        addLink("skolear", link);
+    }
+    @JsonIgnore
     public List<Link> getUndervisningsforhold() {
         return getLinks().getOrDefault("undervisningsforhold", Collections.emptyList()); 
     }
     public void addUndervisningsforhold(Link link) {
         addLink("undervisningsforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getGruppemedlemskap() {
+        return getLinks().getOrDefault("gruppemedlemskap", Collections.emptyList()); 
+    }
+    public void addGruppemedlemskap(Link link) {
+        addLink("gruppemedlemskap", link);
     }
     @JsonIgnore
     public List<Link> getGrepreferanse() {

@@ -1,4 +1,4 @@
-// Built from tag v3.4.0
+// Built from tag v3.5.0-rc-1
 
 package no.fint.model.resource.utdanning.timeplan;
 
@@ -31,11 +31,25 @@ public class UndervisningsgruppeResource extends Gruppe implements FintMainObjec
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
+    public List<Link> getElevforhold() {
+        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
+    }
+    public void addElevforhold(Link link) {
+        addLink("elevforhold", link);
+    }
+    @JsonIgnore
     public List<Link> getFag() {
         return getLinks().getOrDefault("fag", Collections.emptyList()); 
     }
     public void addFag(Link link) {
         addLink("fag", link);
+    }
+    @JsonIgnore
+    public List<Link> getTermin() {
+        return getLinks().getOrDefault("termin", Collections.emptyList()); 
+    }
+    public void addTermin(Link link) {
+        addLink("termin", link);
     }
     @JsonIgnore
     public List<Link> getSkole() {
@@ -45,11 +59,11 @@ public class UndervisningsgruppeResource extends Gruppe implements FintMainObjec
         addLink("skole", link);
     }
     @JsonIgnore
-    public List<Link> getElevforhold() {
-        return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
+    public List<Link> getSkolear() {
+        return getLinks().getOrDefault("skolear", Collections.emptyList()); 
     }
-    public void addElevforhold(Link link) {
-        addLink("elevforhold", link);
+    public void addSkolear(Link link) {
+        addLink("skolear", link);
     }
     @JsonIgnore
     public List<Link> getUndervisningsforhold() {
@@ -64,6 +78,13 @@ public class UndervisningsgruppeResource extends Gruppe implements FintMainObjec
     }
     public void addTime(Link link) {
         addLink("time", link);
+    }
+    @JsonIgnore
+    public List<Link> getGruppemedlemskap() {
+        return getLinks().getOrDefault("gruppemedlemskap", Collections.emptyList()); 
+    }
+    public void addGruppemedlemskap(Link link) {
+        addLink("gruppemedlemskap", link);
     }
     @JsonIgnore
     public List<Link> getGrepreferanse() {

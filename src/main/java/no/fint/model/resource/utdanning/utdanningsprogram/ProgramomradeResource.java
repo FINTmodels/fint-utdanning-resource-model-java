@@ -1,4 +1,4 @@
-// Built from tag v3.4.0
+// Built from tag v3.5.0-rc-1
 
 package no.fint.model.resource.utdanning.utdanningsprogram;
 
@@ -31,18 +31,18 @@ public class ProgramomradeResource extends Gruppe implements FintMainObject, Fin
     private final Map<String, List<Link>> links = createLinks();
         
     @JsonIgnore
-    public List<Link> getUtdanningsprogram() {
-        return getLinks().getOrDefault("utdanningsprogram", Collections.emptyList()); 
-    }
-    public void addUtdanningsprogram(Link link) {
-        addLink("utdanningsprogram", link);
-    }
-    @JsonIgnore
     public List<Link> getElevforhold() {
         return getLinks().getOrDefault("elevforhold", Collections.emptyList()); 
     }
     public void addElevforhold(Link link) {
         addLink("elevforhold", link);
+    }
+    @JsonIgnore
+    public List<Link> getUtdanningsprogram() {
+        return getLinks().getOrDefault("utdanningsprogram", Collections.emptyList()); 
+    }
+    public void addUtdanningsprogram(Link link) {
+        addLink("utdanningsprogram", link);
     }
     @JsonIgnore
     public List<Link> getFag() {
@@ -57,6 +57,13 @@ public class ProgramomradeResource extends Gruppe implements FintMainObject, Fin
     }
     public void addTrinn(Link link) {
         addLink("trinn", link);
+    }
+    @JsonIgnore
+    public List<Link> getGruppemedlemskap() {
+        return getLinks().getOrDefault("gruppemedlemskap", Collections.emptyList()); 
+    }
+    public void addGruppemedlemskap(Link link) {
+        addLink("gruppemedlemskap", link);
     }
     @JsonIgnore
     public List<Link> getGrepreferanse() {

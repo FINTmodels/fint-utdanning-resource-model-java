@@ -1,6 +1,6 @@
 // Built from tag v3.5.0-rc-1
 
-package no.fint.model.resource.utdanning.timeplan;
+package no.fint.model.resource.utdanning.kodeverk;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -18,27 +18,15 @@ import java.util.Map;
 import no.fint.model.FintMainObject;
 import no.fint.model.resource.FintLinks;
 import no.fint.model.resource.Link;
-import no.fint.model.felles.kompleksedatatyper.Identifikator;
+import no.fint.model.felles.basisklasser.Begrep;
 
 @Data
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
-public class RomResource implements FintMainObject, FintLinks {
-    // Attributes
-    private String navn;
-    @NonNull
-    private Identifikator systemId;
+@EqualsAndHashCode(callSuper=true)
+@ToString(callSuper=true)
+public class SkolearResource extends Begrep implements FintMainObject, FintLinks {
 
     // Relations
     @Getter
     private final Map<String, List<Link>> links = createLinks();
-        
-    @JsonIgnore
-    public List<Link> getTime() {
-        return getLinks().getOrDefault("time", Collections.emptyList()); 
-    }
-    public void addTime(Link link) {
-        addLink("time", link);
-    }
 }
